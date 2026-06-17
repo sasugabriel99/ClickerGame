@@ -50,7 +50,6 @@
             labelUsername.Size = new Size(60, 15);
             labelUsername.TabIndex = 0;
             labelUsername.Text = "Username";
-            labelUsername.Click += this.label1_Click;
             // 
             // labelDate
             // 
@@ -60,7 +59,6 @@
             labelDate.Size = new Size(73, 15);
             labelDate.TabIndex = 1;
             labelDate.Text = "Date of birth";
-            labelDate.Click += this.label2_Click;
             // 
             // labelMail
             // 
@@ -133,6 +131,7 @@
             buttonReturnLogin.TabIndex = 9;
             buttonReturnLogin.Text = "Return to Login";
             buttonReturnLogin.UseVisualStyleBackColor = true;
+            buttonReturnLogin.Click += buttonReturnLogin_Click;
             // 
             // buttonCreate
             // 
@@ -142,7 +141,7 @@
             buttonCreate.TabIndex = 10;
             buttonCreate.Text = "Create";
             buttonCreate.UseVisualStyleBackColor = true;
-            buttonCreate.Click += this.button1_Click;
+            buttonCreate.Click += buttonCreate_Click;
             // 
             // CreateAccount
             // 
@@ -163,7 +162,6 @@
             Controls.Add(labelUsername);
             Name = "CreateAccount";
             Text = "Form1";
-            Load += this.CreateAccount_Load;
             ResumeLayout(false);
             PerformLayout();
         }

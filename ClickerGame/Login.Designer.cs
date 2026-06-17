@@ -1,6 +1,6 @@
 ﻿namespace ClickerGame
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -89,7 +89,7 @@
             buttonCreate.Text = "Create an Account";
             buttonCreate.UseVisualStyleBackColor = true;
             // 
-            // Login
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -100,8 +100,9 @@
             Controls.Add(userTextBox);
             Controls.Add(password);
             Controls.Add(userName);
-            Name = "Login";
-            Text = "Form1";
+            Name = "LoginForm";
+            Text = "Clicker Login";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

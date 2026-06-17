@@ -16,5 +16,15 @@ namespace ClickerGame
         {
             InitializeComponent();
         }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReturnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
