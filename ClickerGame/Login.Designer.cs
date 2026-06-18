@@ -67,6 +67,7 @@
             // 
             passTextBox.Location = new Point(122, 72);
             passTextBox.Name = "passTextBox";
+            passTextBox.PasswordChar = '*';
             passTextBox.Size = new Size(213, 23);
             passTextBox.TabIndex = 3;
             // 
@@ -88,6 +89,7 @@
             buttonCreate.TabIndex = 5;
             buttonCreate.Text = "Create an Account";
             buttonCreate.UseVisualStyleBackColor = true;
+            buttonCreate.Click += buttonCreate_Click;
             // 
             // LoginForm
             // 
