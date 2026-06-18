@@ -1,6 +1,6 @@
 ﻿namespace ClickerGame
 {
-    partial class CreateAccount
+    partial class CreateAccountForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,10 +33,10 @@
             labelMail = new Label();
             labelPassword = new Label();
             labelConPassword = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            textUsername = new TextBox();
+            textEmail = new TextBox();
+            textPass = new TextBox();
+            textPassCon = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             buttonReturnLogin = new Button();
             buttonCreate = new Button();
@@ -87,33 +87,33 @@
             labelConPassword.TabIndex = 4;
             labelConPassword.Text = "Confirm Password";
             // 
-            // textBox1
+            // textUsername
             // 
-            textBox1.Location = new Point(195, 47);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(187, 23);
-            textBox1.TabIndex = 5;
+            textUsername.Location = new Point(195, 47);
+            textUsername.Name = "textUsername";
+            textUsername.Size = new Size(187, 23);
+            textUsername.TabIndex = 5;
             // 
-            // textBox2
+            // textEmail
             // 
-            textBox2.Location = new Point(195, 109);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(187, 23);
-            textBox2.TabIndex = 6;
+            textEmail.Location = new Point(195, 109);
+            textEmail.Name = "textEmail";
+            textEmail.Size = new Size(187, 23);
+            textEmail.TabIndex = 6;
             // 
-            // textBox3
+            // textPass
             // 
-            textBox3.Location = new Point(195, 140);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(187, 23);
-            textBox3.TabIndex = 7;
+            textPass.Location = new Point(195, 140);
+            textPass.Name = "textPass";
+            textPass.Size = new Size(187, 23);
+            textPass.TabIndex = 7;
             // 
-            // textBox4
+            // textPassCon
             // 
-            textBox4.Location = new Point(195, 171);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(187, 23);
-            textBox4.TabIndex = 8;
+            textPassCon.Location = new Point(195, 171);
+            textPassCon.Name = "textPassCon";
+            textPassCon.Size = new Size(187, 23);
+            textPassCon.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
@@ -131,7 +131,6 @@
             buttonReturnLogin.TabIndex = 9;
             buttonReturnLogin.Text = "Return to Login";
             buttonReturnLogin.UseVisualStyleBackColor = true;
-            buttonReturnLogin.Click += buttonReturnLogin_Click;
             // 
             // buttonCreate
             // 
@@ -143,7 +142,7 @@
             buttonCreate.UseVisualStyleBackColor = true;
             buttonCreate.Click += buttonCreate_Click;
             // 
-            // CreateAccount
+            // CreateAccountForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -151,16 +150,16 @@
             Controls.Add(buttonCreate);
             Controls.Add(buttonReturnLogin);
             Controls.Add(dateTimePicker1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textPassCon);
+            Controls.Add(textPass);
+            Controls.Add(textEmail);
+            Controls.Add(textUsername);
             Controls.Add(labelConPassword);
             Controls.Add(labelPassword);
             Controls.Add(labelMail);
             Controls.Add(labelDate);
             Controls.Add(labelUsername);
-            Name = "CreateAccount";
+            Name = "CreateAccountForm";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -173,10 +172,10 @@
         private Label labelMail;
         private Label labelPassword;
         private Label labelConPassword;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox textUsername;
+        private TextBox textEmail;
+        private TextBox textPass;
+        private TextBox textPassCon;
         private DateTimePicker dateTimePicker1;
         private Button buttonReturnLogin;
         private Button buttonCreate;
