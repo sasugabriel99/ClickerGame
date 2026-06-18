@@ -60,16 +60,15 @@
             btnStart = new Button();
             btnLogout = new Button();
             playAgainButton = new Button();
-            debugMode = new CheckBox();
             label2 = new Label();
             labelButton1 = new Label();
-            label1 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            labelButton2 = new Label();
+            labelButton3 = new Label();
+            labelButton4 = new Label();
+            labelButton5 = new Label();
+            labelButton6 = new Label();
+            labelButton7 = new Label();
+            labelButton8 = new Label();
             protectionDurationLabel = new Label();
             magnetFlagLabel = new Label();
             valueMagnetLabel = new Label();
@@ -85,6 +84,7 @@
             rewindIcon = new PictureBox();
             magnetIcon = new PictureBox();
             extraLifeIcon = new PictureBox();
+            debugMode = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)protectionIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)autoclickerOpacityIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bonusOpacityIcon).BeginInit();
@@ -189,6 +189,8 @@
             button1.Text = "00";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            button1.MouseLeave += btnHover_MouseLeave;
+            button1.MouseHover += btnHover_MouseHover;
             // 
             // button3
             // 
@@ -205,6 +207,8 @@
             button3.Text = "00";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
+            button3.MouseLeave += btnHover_MouseLeave;
+            button3.MouseHover += btnHover_MouseHover;
             // 
             // button2
             // 
@@ -221,6 +225,8 @@
             button2.Text = "00";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
+            button2.MouseLeave += btnHover_MouseLeave;
+            button2.MouseHover += btnHover_MouseHover;
             // 
             // button4
             // 
@@ -237,6 +243,8 @@
             button4.Text = "00";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
+            button4.MouseLeave += btnHover_MouseLeave;
+            button4.MouseHover += btnHover_MouseHover;
             // 
             // button5
             // 
@@ -253,6 +261,8 @@
             button5.Text = "00";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
+            button5.MouseLeave += btnHover_MouseLeave;
+            button5.MouseHover += btnHover_MouseHover;
             // 
             // button6
             // 
@@ -269,6 +279,8 @@
             button6.Text = "00";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
+            button6.MouseLeave += btnHover_MouseLeave;
+            button6.MouseHover += btnHover_MouseHover;
             // 
             // button7
             // 
@@ -285,6 +297,8 @@
             button7.Text = "00";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
+            button7.MouseLeave += btnHover_MouseLeave;
+            button7.MouseHover += btnHover_MouseHover;
             // 
             // button8
             // 
@@ -301,6 +315,8 @@
             button8.Text = "00";
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
+            button8.MouseLeave += btnHover_MouseLeave;
+            button8.MouseHover += btnHover_MouseHover;
             // 
             // pictureBox1
             // 
@@ -371,6 +387,7 @@
             resetScoreBtn.TabIndex = 19;
             resetScoreBtn.Text = "Reset Score";
             resetScoreBtn.UseVisualStyleBackColor = false;
+            resetScoreBtn.Visible = false;
             resetScoreBtn.Click += resetScoreBtn_Click;
             // 
             // hundredScoreAddBtn
@@ -386,6 +403,7 @@
             hundredScoreAddBtn.TabIndex = 20;
             hundredScoreAddBtn.Text = "+ 100";
             hundredScoreAddBtn.UseVisualStyleBackColor = false;
+            hundredScoreAddBtn.Visible = false;
             hundredScoreAddBtn.Click += hundredScoreAddBtn_Click;
             // 
             // resetMultiplierBtn
@@ -401,6 +419,7 @@
             resetMultiplierBtn.TabIndex = 21;
             resetMultiplierBtn.Text = "Reset Multiplier";
             resetMultiplierBtn.UseVisualStyleBackColor = false;
+            resetMultiplierBtn.Visible = false;
             resetMultiplierBtn.Click += resetMultiplierBtn_Click;
             // 
             // thousandScoreAddBtn
@@ -416,6 +435,7 @@
             thousandScoreAddBtn.TabIndex = 22;
             thousandScoreAddBtn.Text = "+ 1000";
             thousandScoreAddBtn.UseVisualStyleBackColor = false;
+            thousandScoreAddBtn.Visible = false;
             thousandScoreAddBtn.Click += thousandScoreAddBtn_Click;
             // 
             // resetDecayBtn
@@ -431,6 +451,7 @@
             resetDecayBtn.TabIndex = 23;
             resetDecayBtn.Text = "Reset Decay";
             resetDecayBtn.UseVisualStyleBackColor = false;
+            resetDecayBtn.Visible = false;
             resetDecayBtn.Click += resetDecayBtn_Click;
             // 
             // timerLabel
@@ -514,22 +535,6 @@
             playAgainButton.Visible = false;
             playAgainButton.Click += playAgainButton_Click;
             // 
-            // debugMode
-            // 
-            debugMode.AutoSize = true;
-            debugMode.BackColor = Color.Transparent;
-            debugMode.CheckAlign = ContentAlignment.MiddleRight;
-            debugMode.Location = new Point(677, 371);
-            debugMode.Margin = new Padding(4);
-            debugMode.Name = "debugMode";
-            debugMode.Size = new Size(95, 19);
-            debugMode.TabIndex = 68;
-            debugMode.Text = "Debug Mode";
-            debugMode.UseVisualStyleBackColor = false;
-            debugMode.Visible = false;
-            debugMode.CheckedChanged += debugMode_CheckedChanged;
-            debugMode.CheckStateChanged += debugMode_CheckStateChanged;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -554,96 +559,96 @@
             labelButton1.Text = "label1";
             labelButton1.Visible = false;
             // 
-            // label1
+            // labelButton2
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.OldLace;
-            label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(196, 222);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(46, 18);
-            label1.TabIndex = 71;
-            label1.Text = "label2";
-            label1.Visible = false;
+            labelButton2.AutoSize = true;
+            labelButton2.BackColor = Color.OldLace;
+            labelButton2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelButton2.Location = new Point(196, 222);
+            labelButton2.Margin = new Padding(4, 0, 4, 0);
+            labelButton2.Name = "labelButton2";
+            labelButton2.Size = new Size(46, 18);
+            labelButton2.TabIndex = 71;
+            labelButton2.Text = "label2";
+            labelButton2.Visible = false;
             // 
-            // label3
+            // labelButton3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.OldLace;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(92, 328);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(46, 18);
-            label3.TabIndex = 72;
-            label3.Text = "label3";
-            label3.Visible = false;
+            labelButton3.AutoSize = true;
+            labelButton3.BackColor = Color.OldLace;
+            labelButton3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelButton3.Location = new Point(92, 328);
+            labelButton3.Margin = new Padding(4, 0, 4, 0);
+            labelButton3.Name = "labelButton3";
+            labelButton3.Size = new Size(46, 18);
+            labelButton3.TabIndex = 72;
+            labelButton3.Text = "label3";
+            labelButton3.Visible = false;
             // 
-            // label4
+            // labelButton4
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.OldLace;
-            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(196, 328);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(46, 18);
-            label4.TabIndex = 73;
-            label4.Text = "label4";
-            label4.Visible = false;
+            labelButton4.AutoSize = true;
+            labelButton4.BackColor = Color.OldLace;
+            labelButton4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelButton4.Location = new Point(196, 328);
+            labelButton4.Margin = new Padding(4, 0, 4, 0);
+            labelButton4.Name = "labelButton4";
+            labelButton4.Size = new Size(46, 18);
+            labelButton4.TabIndex = 73;
+            labelButton4.Text = "label4";
+            labelButton4.Visible = false;
             // 
-            // label5
+            // labelButton5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.OldLace;
-            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(590, 222);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(46, 18);
-            label5.TabIndex = 74;
-            label5.Text = "label5";
-            label5.Visible = false;
+            labelButton5.AutoSize = true;
+            labelButton5.BackColor = Color.OldLace;
+            labelButton5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelButton5.Location = new Point(590, 222);
+            labelButton5.Margin = new Padding(4, 0, 4, 0);
+            labelButton5.Name = "labelButton5";
+            labelButton5.Size = new Size(46, 18);
+            labelButton5.TabIndex = 74;
+            labelButton5.Text = "label5";
+            labelButton5.Visible = false;
             // 
-            // label6
+            // labelButton6
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.OldLace;
-            label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(697, 222);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(46, 18);
-            label6.TabIndex = 75;
-            label6.Text = "label6";
-            label6.Visible = false;
+            labelButton6.AutoSize = true;
+            labelButton6.BackColor = Color.OldLace;
+            labelButton6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelButton6.Location = new Point(697, 222);
+            labelButton6.Margin = new Padding(4, 0, 4, 0);
+            labelButton6.Name = "labelButton6";
+            labelButton6.Size = new Size(46, 18);
+            labelButton6.TabIndex = 75;
+            labelButton6.Text = "label6";
+            labelButton6.Visible = false;
             // 
-            // label7
+            // labelButton7
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.OldLace;
-            label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(591, 328);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(46, 18);
-            label7.TabIndex = 76;
-            label7.Text = "label7";
-            label7.Visible = false;
+            labelButton7.AutoSize = true;
+            labelButton7.BackColor = Color.OldLace;
+            labelButton7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelButton7.Location = new Point(591, 328);
+            labelButton7.Margin = new Padding(4, 0, 4, 0);
+            labelButton7.Name = "labelButton7";
+            labelButton7.Size = new Size(46, 18);
+            labelButton7.TabIndex = 76;
+            labelButton7.Text = "label7";
+            labelButton7.Visible = false;
             // 
-            // label8
+            // labelButton8
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.OldLace;
-            label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(697, 328);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(46, 18);
-            label8.TabIndex = 77;
-            label8.Text = "label8";
-            label8.Visible = false;
+            labelButton8.AutoSize = true;
+            labelButton8.BackColor = Color.OldLace;
+            labelButton8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelButton8.Location = new Point(697, 328);
+            labelButton8.Margin = new Padding(4, 0, 4, 0);
+            labelButton8.Name = "labelButton8";
+            labelButton8.Size = new Size(46, 18);
+            labelButton8.TabIndex = 77;
+            labelButton8.Text = "label8";
+            labelButton8.Visible = false;
             // 
             // protectionDurationLabel
             // 
@@ -808,6 +813,22 @@
             extraLifeIcon.TabIndex = 91;
             extraLifeIcon.TabStop = false;
             // 
+            // debugMode
+            // 
+            debugMode.AutoSize = true;
+            debugMode.BackColor = Color.Transparent;
+            debugMode.CheckAlign = ContentAlignment.MiddleRight;
+            debugMode.Location = new Point(677, 371);
+            debugMode.Margin = new Padding(4);
+            debugMode.Name = "debugMode";
+            debugMode.Size = new Size(95, 19);
+            debugMode.TabIndex = 68;
+            debugMode.Text = "Debug Mode";
+            debugMode.UseVisualStyleBackColor = false;
+            debugMode.Visible = false;
+            debugMode.CheckedChanged += debugMode_CheckedChanged;
+            debugMode.CheckStateChanged += debugMode_CheckStateChanged;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -821,13 +842,13 @@
             Controls.Add(valueMagnetLabel);
             Controls.Add(magnetFlagLabel);
             Controls.Add(protectionDurationLabel);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label1);
+            Controls.Add(labelButton8);
+            Controls.Add(labelButton7);
+            Controls.Add(labelButton6);
+            Controls.Add(labelButton5);
+            Controls.Add(labelButton4);
+            Controls.Add(labelButton3);
+            Controls.Add(labelButton2);
             Controls.Add(labelButton1);
             Controls.Add(label2);
             Controls.Add(debugMode);
@@ -923,16 +944,15 @@
         private Button btnStart;
         private Button btnLogout;
         private Button playAgainButton;
-        private CheckBox debugMode;
         private Label label2;
         private Label labelButton1;
-        private Label label1;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
+        private Label labelButton2;
+        private Label labelButton3;
+        private Label labelButton4;
+        private Label labelButton5;
+        private Label labelButton6;
+        private Label labelButton7;
+        private Label labelButton8;
         private Label protectionDurationLabel;
         private Label magnetFlagLabel;
         private Label valueMagnetLabel;
@@ -948,5 +968,6 @@
         private PictureBox rewindIcon;
         private PictureBox magnetIcon;
         private PictureBox extraLifeIcon;
+        private CheckBox debugMode;
     }
 }

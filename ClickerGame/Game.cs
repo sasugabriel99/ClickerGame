@@ -351,7 +351,10 @@ namespace ClickerGame
             // Find the label by its name
             Label label = Controls.Find(labelName, true).FirstOrDefault() as Label;
             // Hide the label when the mouse leaves the button
-            label.Visible = false;
+            if(label != null)
+            {
+                label.Visible = false;
+            }     
 
         }
 
@@ -548,10 +551,10 @@ namespace ClickerGame
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            seconds = 5;
+            seconds = 100;
             countdownTimer.Start();
             timerStart = 1;
-
+            btnStart.Visible = false;
         }
 
         private void countdownTimer_Tick(object sender, EventArgs e)
