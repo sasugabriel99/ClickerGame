@@ -133,6 +133,7 @@
             buttonReturnLogin.TabIndex = 9;
             buttonReturnLogin.Text = "Return to Login";
             buttonReturnLogin.UseVisualStyleBackColor = true;
+            buttonReturnLogin.Click += buttonReturnLogin_Click_1;
             // 
             // buttonCreate
             // 
