@@ -1,8 +1,9 @@
 namespace ClickerGame
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public static int HighScore { get; set; }
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -18,6 +19,11 @@ namespace ClickerGame
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }

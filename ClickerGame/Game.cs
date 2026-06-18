@@ -16,5 +16,35 @@ namespace ClickerGame
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void magnetFlagLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
