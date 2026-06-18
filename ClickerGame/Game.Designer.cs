@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             protectionOpacityIcon = new PictureBox();
             autoclickerOpacityIcon = new PictureBox();
             bonusOpacityIcon = new PictureBox();
@@ -47,11 +48,11 @@
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
-            button9 = new Button();
-            button10 = new Button();
-            button11 = new Button();
-            button12 = new Button();
-            button13 = new Button();
+            resetScoreBtn = new Button();
+            hundredScoreAddBtn = new Button();
+            resetMultiplierBtn = new Button();
+            thousandScoreAddBtn = new Button();
+            resetDecayBtn = new Button();
             timerLabel = new Label();
             scoreLabel = new Label();
             highscoreLabel = new Label();
@@ -125,6 +126,9 @@
             // 
             // rewindOpacityIcon
             // 
+            rewindOpacityIcon.BackColor = Color.Transparent;
+            rewindOpacityIcon.BackgroundImage = Properties.Resources.reverseDisabled;
+            rewindOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
             rewindOpacityIcon.Location = new Point(144, 12);
             rewindOpacityIcon.Name = "rewindOpacityIcon";
             rewindOpacityIcon.Size = new Size(30, 30);
@@ -133,6 +137,9 @@
             // 
             // magnetOpacityIcon
             // 
+            magnetOpacityIcon.BackColor = Color.Transparent;
+            magnetOpacityIcon.BackgroundImage = Properties.Resources.MagnetDisabled;
+            magnetOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
             magnetOpacityIcon.Location = new Point(180, 12);
             magnetOpacityIcon.Name = "magnetOpacityIcon";
             magnetOpacityIcon.Size = new Size(30, 30);
@@ -141,6 +148,9 @@
             // 
             // extraLifeOpacityIcon
             // 
+            extraLifeOpacityIcon.BackColor = Color.Transparent;
+            extraLifeOpacityIcon.BackgroundImage = Properties.Resources.extraLifeDisabled;
+            extraLifeOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
             extraLifeOpacityIcon.Location = new Point(216, 12);
             extraLifeOpacityIcon.Name = "extraLifeOpacityIcon";
             extraLifeOpacityIcon.Size = new Size(30, 30);
@@ -166,7 +176,7 @@
             // button2
             // 
             button2.BackColor = Color.Transparent;
-            button2.BackgroundImage = Properties.Resources.environment_protection;
+            button2.BackgroundImage = Properties.Resources.plus;
             button2.BackgroundImageLayout = ImageLayout.Zoom;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -181,7 +191,7 @@
             // button3
             // 
             button3.BackColor = Color.Transparent;
-            button3.BackgroundImage = Properties.Resources.environment_protection;
+            button3.BackgroundImage = Properties.Resources.multiplier;
             button3.BackgroundImageLayout = ImageLayout.Zoom;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -196,7 +206,7 @@
             // button4
             // 
             button4.BackColor = Color.Transparent;
-            button4.BackgroundImage = Properties.Resources.environment_protection;
+            button4.BackgroundImage = Properties.Resources.automation;
             button4.BackgroundImageLayout = ImageLayout.Zoom;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -211,7 +221,7 @@
             // button5
             // 
             button5.BackColor = Color.Transparent;
-            button5.BackgroundImage = Properties.Resources.environment_protection;
+            button5.BackgroundImage = Properties.Resources.bonus;
             button5.BackgroundImageLayout = ImageLayout.Zoom;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -226,7 +236,7 @@
             // button6
             // 
             button6.BackColor = Color.Transparent;
-            button6.BackgroundImage = Properties.Resources.environment_protection;
+            button6.BackgroundImage = Properties.Resources.reverse;
             button6.BackgroundImageLayout = ImageLayout.Zoom;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -241,7 +251,7 @@
             // button7
             // 
             button7.BackColor = Color.Transparent;
-            button7.BackgroundImage = Properties.Resources.environment_protection;
+            button7.BackgroundImage = Properties.Resources.Magnet;
             button7.BackgroundImageLayout = ImageLayout.Zoom;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -256,7 +266,7 @@
             // button8
             // 
             button8.BackColor = Color.Transparent;
-            button8.BackgroundImage = Properties.Resources.environment_protection;
+            button8.BackgroundImage = Properties.Resources.extraLife;
             button8.BackgroundImageLayout = ImageLayout.Zoom;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -270,14 +280,20 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(289, 146);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 200);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = Properties.Resources.multiplier1;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox2.Location = new Point(289, 382);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(50, 50);
@@ -286,6 +302,9 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = Properties.Resources.decay1;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox3.Location = new Point(439, 382);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(50, 50);
@@ -294,6 +313,9 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BackgroundImage = Properties.Resources.multiplier1;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox4.Location = new Point(250, 59);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(50, 50);
@@ -303,81 +325,84 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImage = Properties.Resources.decay1;
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox5.Location = new Point(473, 59);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(50, 50);
             pictureBox5.TabIndex = 18;
             pictureBox5.TabStop = false;
             // 
-            // button9
+            // resetScoreBtn
             // 
-            button9.BackColor = Color.Transparent;
-            button9.BackgroundImageLayout = ImageLayout.Zoom;
-            button9.FlatStyle = FlatStyle.Popup;
-            button9.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.ForeColor = SystemColors.ControlText;
-            button9.Location = new Point(537, 12);
-            button9.Name = "button9";
-            button9.Size = new Size(57, 57);
-            button9.TabIndex = 19;
-            button9.Text = "00";
-            button9.UseVisualStyleBackColor = false;
+            resetScoreBtn.BackColor = Color.Transparent;
+            resetScoreBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            resetScoreBtn.FlatStyle = FlatStyle.Popup;
+            resetScoreBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resetScoreBtn.ForeColor = SystemColors.ControlText;
+            resetScoreBtn.Location = new Point(537, 12);
+            resetScoreBtn.Name = "resetScoreBtn";
+            resetScoreBtn.Size = new Size(57, 57);
+            resetScoreBtn.TabIndex = 19;
+            resetScoreBtn.Text = "Reset Score";
+            resetScoreBtn.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // hundredScoreAddBtn
             // 
-            button10.BackColor = Color.Transparent;
-            button10.BackgroundImageLayout = ImageLayout.Zoom;
-            button10.FlatStyle = FlatStyle.Popup;
-            button10.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button10.ForeColor = SystemColors.ControlText;
-            button10.Location = new Point(537, 75);
-            button10.Name = "button10";
-            button10.Size = new Size(57, 57);
-            button10.TabIndex = 20;
-            button10.Text = "00";
-            button10.UseVisualStyleBackColor = false;
+            hundredScoreAddBtn.BackColor = Color.Transparent;
+            hundredScoreAddBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            hundredScoreAddBtn.FlatStyle = FlatStyle.Popup;
+            hundredScoreAddBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            hundredScoreAddBtn.ForeColor = SystemColors.ControlText;
+            hundredScoreAddBtn.Location = new Point(537, 75);
+            hundredScoreAddBtn.Name = "hundredScoreAddBtn";
+            hundredScoreAddBtn.Size = new Size(57, 57);
+            hundredScoreAddBtn.TabIndex = 20;
+            hundredScoreAddBtn.Text = "+ 100";
+            hundredScoreAddBtn.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // resetMultiplierBtn
             // 
-            button11.BackColor = Color.Transparent;
-            button11.BackgroundImageLayout = ImageLayout.Zoom;
-            button11.FlatStyle = FlatStyle.Popup;
-            button11.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button11.ForeColor = SystemColors.ControlText;
-            button11.Location = new Point(610, 12);
-            button11.Name = "button11";
-            button11.Size = new Size(57, 57);
-            button11.TabIndex = 21;
-            button11.Text = "00";
-            button11.UseVisualStyleBackColor = false;
+            resetMultiplierBtn.BackColor = Color.Transparent;
+            resetMultiplierBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            resetMultiplierBtn.FlatStyle = FlatStyle.Popup;
+            resetMultiplierBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resetMultiplierBtn.ForeColor = SystemColors.ControlText;
+            resetMultiplierBtn.Location = new Point(610, 12);
+            resetMultiplierBtn.Name = "resetMultiplierBtn";
+            resetMultiplierBtn.Size = new Size(57, 57);
+            resetMultiplierBtn.TabIndex = 21;
+            resetMultiplierBtn.Text = "Reset Multiplier";
+            resetMultiplierBtn.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // thousandScoreAddBtn
             // 
-            button12.BackColor = Color.Transparent;
-            button12.BackgroundImageLayout = ImageLayout.Zoom;
-            button12.FlatStyle = FlatStyle.Popup;
-            button12.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button12.ForeColor = SystemColors.ControlText;
-            button12.Location = new Point(610, 75);
-            button12.Name = "button12";
-            button12.Size = new Size(57, 57);
-            button12.TabIndex = 22;
-            button12.Text = "00";
-            button12.UseVisualStyleBackColor = false;
+            thousandScoreAddBtn.BackColor = Color.Transparent;
+            thousandScoreAddBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            thousandScoreAddBtn.FlatStyle = FlatStyle.Popup;
+            thousandScoreAddBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            thousandScoreAddBtn.ForeColor = SystemColors.ControlText;
+            thousandScoreAddBtn.Location = new Point(610, 75);
+            thousandScoreAddBtn.Name = "thousandScoreAddBtn";
+            thousandScoreAddBtn.Size = new Size(57, 57);
+            thousandScoreAddBtn.TabIndex = 22;
+            thousandScoreAddBtn.Text = "+ 1000";
+            thousandScoreAddBtn.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // resetDecayBtn
             // 
-            button13.BackColor = Color.Transparent;
-            button13.BackgroundImageLayout = ImageLayout.Zoom;
-            button13.FlatStyle = FlatStyle.Popup;
-            button13.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button13.ForeColor = SystemColors.ControlText;
-            button13.Location = new Point(686, 75);
-            button13.Name = "button13";
-            button13.Size = new Size(57, 57);
-            button13.TabIndex = 23;
-            button13.Text = "00";
-            button13.UseVisualStyleBackColor = false;
+            resetDecayBtn.BackColor = Color.Transparent;
+            resetDecayBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            resetDecayBtn.FlatStyle = FlatStyle.Popup;
+            resetDecayBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resetDecayBtn.ForeColor = SystemColors.ControlText;
+            resetDecayBtn.Location = new Point(686, 75);
+            resetDecayBtn.Name = "resetDecayBtn";
+            resetDecayBtn.Size = new Size(57, 57);
+            resetDecayBtn.TabIndex = 23;
+            resetDecayBtn.Text = "00";
+            resetDecayBtn.UseVisualStyleBackColor = false;
             // 
             // timerLabel
             // 
@@ -601,13 +626,14 @@
             // magnetFlagLabel
             // 
             magnetFlagLabel.AutoSize = true;
-            magnetFlagLabel.Location = new Point(506, 269);
+            magnetFlagLabel.Location = new Point(504, 262);
             magnetFlagLabel.Margin = new Padding(4, 0, 4, 0);
             magnetFlagLabel.Name = "magnetFlagLabel";
             magnetFlagLabel.Size = new Size(17, 15);
             magnetFlagLabel.TabIndex = 79;
             magnetFlagLabel.Text = "--";
             magnetFlagLabel.Visible = false;
+            magnetFlagLabel.Click += magnetFlagLabel_Click;
             // 
             // valueMagnetLabel
             // 
@@ -665,7 +691,7 @@
             // decayTimerLabel
             // 
             decayTimerLabel.AutoSize = true;
-            decayTimerLabel.Location = new Point(510, 402);
+            decayTimerLabel.Location = new Point(504, 402);
             decayTimerLabel.Margin = new Padding(4, 0, 4, 0);
             decayTimerLabel.Name = "decayTimerLabel";
             decayTimerLabel.Size = new Size(13, 15);
@@ -702,11 +728,11 @@
             Controls.Add(highscoreLabel);
             Controls.Add(scoreLabel);
             Controls.Add(timerLabel);
-            Controls.Add(button13);
-            Controls.Add(button12);
-            Controls.Add(button11);
-            Controls.Add(button10);
-            Controls.Add(button9);
+            Controls.Add(resetDecayBtn);
+            Controls.Add(thousandScoreAddBtn);
+            Controls.Add(resetMultiplierBtn);
+            Controls.Add(hundredScoreAddBtn);
+            Controls.Add(resetScoreBtn);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -765,11 +791,11 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
-        private Button button9;
-        private Button button10;
-        private Button button11;
-        private Button button12;
-        private Button button13;
+        private Button resetScoreBtn;
+        private Button hundredScoreAddBtn;
+        private Button resetMultiplierBtn;
+        private Button thousandScoreAddBtn;
+        private Button resetDecayBtn;
         private Label timerLabel;
         private Label scoreLabel;
         private Label highscoreLabel;

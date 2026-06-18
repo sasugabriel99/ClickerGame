@@ -41,5 +41,10 @@ namespace ClickerGame
         {
 
         }
+
+        private void magnetFlagLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
