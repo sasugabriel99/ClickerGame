@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            protectionOpacityIcon = new PictureBox();
+            protectionIcon = new PictureBox();
             autoclickerOpacityIcon = new PictureBox();
             bonusOpacityIcon = new PictureBox();
             rewindOpacityIcon = new PictureBox();
             magnetOpacityIcon = new PictureBox();
             extraLifeOpacityIcon = new PictureBox();
             button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
+            button2 = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            imgMultiplier = new PictureBox();
+            imgDecay = new PictureBox();
+            pictureBoxMultiplier = new PictureBox();
+            pictureBoxDecay = new PictureBox();
             resetScoreBtn = new Button();
             hundredScoreAddBtn = new Button();
             resetMultiplierBtn = new Button();
@@ -77,37 +78,53 @@
             multiplierLabel = new Label();
             decayRateLabel = new Label();
             decayTimerLabel = new Label();
-            ((System.ComponentModel.ISupportInitialize)protectionOpacityIcon).BeginInit();
+            countdownTimer = new System.Windows.Forms.Timer(components);
+            pictureBox2 = new PictureBox();
+            autoclickerIcon = new PictureBox();
+            bonusIcon = new PictureBox();
+            rewindIcon = new PictureBox();
+            magnetIcon = new PictureBox();
+            extraLifeIcon = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)protectionIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)autoclickerOpacityIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bonusOpacityIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rewindOpacityIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)magnetOpacityIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)extraLifeOpacityIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgMultiplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgDecay).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMultiplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDecay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)autoclickerIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bonusIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)rewindIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)magnetIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)extraLifeIcon).BeginInit();
             SuspendLayout();
             // 
-            // protectionOpacityIcon
+            // protectionIcon
             // 
-            protectionOpacityIcon.BackColor = Color.Transparent;
-            protectionOpacityIcon.BackgroundImage = Properties.Resources.protectionDisabled;
-            protectionOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
-            protectionOpacityIcon.Location = new Point(36, 12);
-            protectionOpacityIcon.Name = "protectionOpacityIcon";
-            protectionOpacityIcon.Size = new Size(30, 30);
-            protectionOpacityIcon.TabIndex = 0;
-            protectionOpacityIcon.TabStop = false;
-            protectionOpacityIcon.Click += pictureBox1_Click;
+            protectionIcon.BackColor = Color.Transparent;
+            protectionIcon.BackgroundImage = Properties.Resources.protectionDisabled;
+            protectionIcon.BackgroundImageLayout = ImageLayout.Zoom;
+            protectionIcon.Enabled = false;
+            protectionIcon.ErrorImage = null;
+            protectionIcon.ImageLocation = "0,0";
+            protectionIcon.InitialImage = null;
+            protectionIcon.Location = new Point(36, 13);
+            protectionIcon.Name = "protectionIcon";
+            protectionIcon.Size = new Size(30, 30);
+            protectionIcon.TabIndex = 43;
+            protectionIcon.TabStop = false;
             // 
             // autoclickerOpacityIcon
             // 
             autoclickerOpacityIcon.BackColor = Color.Transparent;
             autoclickerOpacityIcon.BackgroundImage = Properties.Resources.automationDisabled;
             autoclickerOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
-            autoclickerOpacityIcon.Location = new Point(72, 12);
+            autoclickerOpacityIcon.Location = new Point(72, 13);
             autoclickerOpacityIcon.Name = "autoclickerOpacityIcon";
             autoclickerOpacityIcon.Size = new Size(30, 30);
             autoclickerOpacityIcon.TabIndex = 1;
@@ -118,7 +135,7 @@
             bonusOpacityIcon.BackColor = Color.Transparent;
             bonusOpacityIcon.BackgroundImage = Properties.Resources.bonusDisabled;
             bonusOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
-            bonusOpacityIcon.Location = new Point(108, 12);
+            bonusOpacityIcon.Location = new Point(108, 13);
             bonusOpacityIcon.Name = "bonusOpacityIcon";
             bonusOpacityIcon.Size = new Size(30, 30);
             bonusOpacityIcon.TabIndex = 2;
@@ -129,7 +146,7 @@
             rewindOpacityIcon.BackColor = Color.Transparent;
             rewindOpacityIcon.BackgroundImage = Properties.Resources.reverseDisabled;
             rewindOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
-            rewindOpacityIcon.Location = new Point(144, 12);
+            rewindOpacityIcon.Location = new Point(142, 13);
             rewindOpacityIcon.Name = "rewindOpacityIcon";
             rewindOpacityIcon.Size = new Size(30, 30);
             rewindOpacityIcon.TabIndex = 3;
@@ -140,7 +157,7 @@
             magnetOpacityIcon.BackColor = Color.Transparent;
             magnetOpacityIcon.BackgroundImage = Properties.Resources.MagnetDisabled;
             magnetOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
-            magnetOpacityIcon.Location = new Point(180, 12);
+            magnetOpacityIcon.Location = new Point(178, 13);
             magnetOpacityIcon.Name = "magnetOpacityIcon";
             magnetOpacityIcon.Size = new Size(30, 30);
             magnetOpacityIcon.TabIndex = 4;
@@ -151,7 +168,7 @@
             extraLifeOpacityIcon.BackColor = Color.Transparent;
             extraLifeOpacityIcon.BackgroundImage = Properties.Resources.extraLifeDisabled;
             extraLifeOpacityIcon.BackgroundImageLayout = ImageLayout.Zoom;
-            extraLifeOpacityIcon.Location = new Point(216, 12);
+            extraLifeOpacityIcon.Location = new Point(214, 13);
             extraLifeOpacityIcon.Name = "extraLifeOpacityIcon";
             extraLifeOpacityIcon.Size = new Size(30, 30);
             extraLifeOpacityIcon.TabIndex = 5;
@@ -173,35 +190,37 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.BackgroundImage = Properties.Resources.plus;
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Black;
-            button2.Location = new Point(36, 246);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 100);
-            button2.TabIndex = 7;
-            button2.Text = "00";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             button3.BackColor = Color.Transparent;
-            button3.BackgroundImage = Properties.Resources.multiplier;
+            button3.BackgroundImage = Properties.Resources.plus;
             button3.BackgroundImageLayout = ImageLayout.Zoom;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
-            button3.Location = new Point(142, 140);
+            button3.Location = new Point(36, 246);
             button3.Name = "button3";
             button3.Size = new Size(100, 100);
-            button3.TabIndex = 8;
+            button3.TabIndex = 7;
             button3.Text = "00";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImage = Properties.Resources.multiplier;
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(142, 140);
+            button2.Name = "button2";
+            button2.Size = new Size(100, 100);
+            button2.TabIndex = 8;
+            button2.Text = "00";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -217,6 +236,7 @@
             button4.TabIndex = 9;
             button4.Text = "00";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -232,6 +252,7 @@
             button5.TabIndex = 10;
             button5.Text = "00";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -247,6 +268,7 @@
             button6.TabIndex = 11;
             button6.Text = "00";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -262,6 +284,7 @@
             button7.TabIndex = 12;
             button7.Text = "00";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -277,6 +300,7 @@
             button8.TabIndex = 13;
             button8.Text = "00";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // pictureBox1
             // 
@@ -288,51 +312,51 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // pictureBox2
+            // imgMultiplier
             // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.multiplier1;
-            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Location = new Point(289, 382);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
-            pictureBox2.TabIndex = 15;
-            pictureBox2.TabStop = false;
+            imgMultiplier.BackColor = Color.Transparent;
+            imgMultiplier.BackgroundImage = Properties.Resources.multiplier1;
+            imgMultiplier.BackgroundImageLayout = ImageLayout.Zoom;
+            imgMultiplier.Location = new Point(289, 382);
+            imgMultiplier.Name = "imgMultiplier";
+            imgMultiplier.Size = new Size(50, 50);
+            imgMultiplier.TabIndex = 15;
+            imgMultiplier.TabStop = false;
             // 
-            // pictureBox3
+            // imgDecay
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = Properties.Resources.decay1;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(439, 382);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(50, 50);
-            pictureBox3.TabIndex = 16;
-            pictureBox3.TabStop = false;
+            imgDecay.BackColor = Color.Transparent;
+            imgDecay.BackgroundImage = Properties.Resources.decay1;
+            imgDecay.BackgroundImageLayout = ImageLayout.Zoom;
+            imgDecay.Location = new Point(439, 382);
+            imgDecay.Name = "imgDecay";
+            imgDecay.Size = new Size(50, 50);
+            imgDecay.TabIndex = 16;
+            imgDecay.TabStop = false;
             // 
-            // pictureBox4
+            // pictureBoxMultiplier
             // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BackgroundImage = Properties.Resources.multiplier1;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox4.Location = new Point(250, 59);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(50, 50);
-            pictureBox4.TabIndex = 17;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
+            pictureBoxMultiplier.BackColor = Color.Transparent;
+            pictureBoxMultiplier.BackgroundImage = Properties.Resources.multiplier1;
+            pictureBoxMultiplier.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBoxMultiplier.Location = new Point(250, 59);
+            pictureBoxMultiplier.Name = "pictureBoxMultiplier";
+            pictureBoxMultiplier.Size = new Size(50, 50);
+            pictureBoxMultiplier.TabIndex = 17;
+            pictureBoxMultiplier.TabStop = false;
             // 
-            // pictureBox5
+            // pictureBoxDecay
             // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.BackgroundImage = Properties.Resources.decay1;
-            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox5.Location = new Point(473, 59);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(50, 50);
-            pictureBox5.TabIndex = 18;
-            pictureBox5.TabStop = false;
+            pictureBoxDecay.BackColor = Color.Transparent;
+            pictureBoxDecay.BackgroundImage = Properties.Resources.decay1;
+            pictureBoxDecay.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBoxDecay.Location = new Point(473, 59);
+            pictureBoxDecay.Name = "pictureBoxDecay";
+            pictureBoxDecay.Size = new Size(50, 50);
+            pictureBoxDecay.TabIndex = 18;
+            pictureBoxDecay.TabStop = false;
             // 
             // resetScoreBtn
             // 
@@ -347,6 +371,7 @@
             resetScoreBtn.TabIndex = 19;
             resetScoreBtn.Text = "Reset Score";
             resetScoreBtn.UseVisualStyleBackColor = false;
+            resetScoreBtn.Click += resetScoreBtn_Click;
             // 
             // hundredScoreAddBtn
             // 
@@ -361,6 +386,7 @@
             hundredScoreAddBtn.TabIndex = 20;
             hundredScoreAddBtn.Text = "+ 100";
             hundredScoreAddBtn.UseVisualStyleBackColor = false;
+            hundredScoreAddBtn.Click += hundredScoreAddBtn_Click;
             // 
             // resetMultiplierBtn
             // 
@@ -375,6 +401,7 @@
             resetMultiplierBtn.TabIndex = 21;
             resetMultiplierBtn.Text = "Reset Multiplier";
             resetMultiplierBtn.UseVisualStyleBackColor = false;
+            resetMultiplierBtn.Click += resetMultiplierBtn_Click;
             // 
             // thousandScoreAddBtn
             // 
@@ -389,6 +416,7 @@
             thousandScoreAddBtn.TabIndex = 22;
             thousandScoreAddBtn.Text = "+ 1000";
             thousandScoreAddBtn.UseVisualStyleBackColor = false;
+            thousandScoreAddBtn.Click += thousandScoreAddBtn_Click;
             // 
             // resetDecayBtn
             // 
@@ -401,8 +429,9 @@
             resetDecayBtn.Name = "resetDecayBtn";
             resetDecayBtn.Size = new Size(57, 57);
             resetDecayBtn.TabIndex = 23;
-            resetDecayBtn.Text = "00";
+            resetDecayBtn.Text = "Reset Decay";
             resetDecayBtn.UseVisualStyleBackColor = false;
+            resetDecayBtn.Click += resetDecayBtn_Click;
             // 
             // timerLabel
             // 
@@ -455,6 +484,7 @@
             btnStart.TabIndex = 65;
             btnStart.Text = "START";
             btnStart.UseVisualStyleBackColor = false;
+            btnStart.Click += btnStart_Click;
             // 
             // btnLogout
             // 
@@ -468,6 +498,7 @@
             btnLogout.TabIndex = 66;
             btnLogout.Text = "LOG OUT";
             btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // playAgainButton
             // 
@@ -481,6 +512,7 @@
             playAgainButton.Text = "Play Again";
             playAgainButton.UseVisualStyleBackColor = false;
             playAgainButton.Visible = false;
+            playAgainButton.Click += playAgainButton_Click;
             // 
             // debugMode
             // 
@@ -495,6 +527,8 @@
             debugMode.Text = "Debug Mode";
             debugMode.UseVisualStyleBackColor = false;
             debugMode.Visible = false;
+            debugMode.CheckedChanged += debugMode_CheckedChanged;
+            debugMode.CheckStateChanged += debugMode_CheckStateChanged;
             // 
             // label2
             // 
@@ -519,7 +553,6 @@
             labelButton1.TabIndex = 70;
             labelButton1.Text = "label1";
             labelButton1.Visible = false;
-            labelButton1.Click += labelButton1_Click;
             // 
             // label1
             // 
@@ -531,7 +564,7 @@
             label1.Name = "label1";
             label1.Size = new Size(46, 18);
             label1.TabIndex = 71;
-            label1.Text = "label1";
+            label1.Text = "label2";
             label1.Visible = false;
             // 
             // label3
@@ -544,7 +577,7 @@
             label3.Name = "label3";
             label3.Size = new Size(46, 18);
             label3.TabIndex = 72;
-            label3.Text = "label1";
+            label3.Text = "label3";
             label3.Visible = false;
             // 
             // label4
@@ -557,7 +590,7 @@
             label4.Name = "label4";
             label4.Size = new Size(46, 18);
             label4.TabIndex = 73;
-            label4.Text = "label1";
+            label4.Text = "label4";
             label4.Visible = false;
             // 
             // label5
@@ -570,7 +603,7 @@
             label5.Name = "label5";
             label5.Size = new Size(46, 18);
             label5.TabIndex = 74;
-            label5.Text = "label1";
+            label5.Text = "label5";
             label5.Visible = false;
             // 
             // label6
@@ -583,7 +616,7 @@
             label6.Name = "label6";
             label6.Size = new Size(46, 18);
             label6.TabIndex = 75;
-            label6.Text = "label1";
+            label6.Text = "label6";
             label6.Visible = false;
             // 
             // label7
@@ -596,7 +629,7 @@
             label7.Name = "label7";
             label7.Size = new Size(46, 18);
             label7.TabIndex = 76;
-            label7.Text = "label1";
+            label7.Text = "label7";
             label7.Visible = false;
             // 
             // label8
@@ -609,7 +642,7 @@
             label8.Name = "label8";
             label8.Size = new Size(46, 18);
             label8.TabIndex = 77;
-            label8.Text = "label1";
+            label8.Text = "label8";
             label8.Visible = false;
             // 
             // protectionDurationLabel
@@ -633,7 +666,6 @@
             magnetFlagLabel.TabIndex = 79;
             magnetFlagLabel.Text = "--";
             magnetFlagLabel.Visible = false;
-            magnetFlagLabel.Click += magnetFlagLabel_Click;
             // 
             // valueMagnetLabel
             // 
@@ -699,6 +731,83 @@
             decayTimerLabel.Text = "0";
             decayTimerLabel.Visible = false;
             // 
+            // countdownTimer
+            // 
+            countdownTimer.Interval = 1000;
+            countdownTimer.Tick += countdownTimer_Tick;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = Properties.Resources.environment_protection;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Enabled = false;
+            pictureBox2.Location = new Point(36, 13);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(30, 30);
+            pictureBox2.TabIndex = 86;
+            pictureBox2.TabStop = false;
+            // 
+            // autoclickerIcon
+            // 
+            autoclickerIcon.BackColor = Color.Transparent;
+            autoclickerIcon.BackgroundImage = Properties.Resources.automation;
+            autoclickerIcon.BackgroundImageLayout = ImageLayout.Zoom;
+            autoclickerIcon.Enabled = false;
+            autoclickerIcon.Location = new Point(72, 13);
+            autoclickerIcon.Name = "autoclickerIcon";
+            autoclickerIcon.Size = new Size(30, 30);
+            autoclickerIcon.TabIndex = 87;
+            autoclickerIcon.TabStop = false;
+            // 
+            // bonusIcon
+            // 
+            bonusIcon.BackColor = Color.Transparent;
+            bonusIcon.BackgroundImage = Properties.Resources.bonus;
+            bonusIcon.BackgroundImageLayout = ImageLayout.Zoom;
+            bonusIcon.Enabled = false;
+            bonusIcon.Location = new Point(108, 13);
+            bonusIcon.Name = "bonusIcon";
+            bonusIcon.Size = new Size(30, 30);
+            bonusIcon.TabIndex = 88;
+            bonusIcon.TabStop = false;
+            // 
+            // rewindIcon
+            // 
+            rewindIcon.BackColor = Color.Transparent;
+            rewindIcon.BackgroundImage = Properties.Resources.reverse;
+            rewindIcon.BackgroundImageLayout = ImageLayout.Zoom;
+            rewindIcon.Enabled = false;
+            rewindIcon.Location = new Point(142, 13);
+            rewindIcon.Name = "rewindIcon";
+            rewindIcon.Size = new Size(30, 30);
+            rewindIcon.TabIndex = 89;
+            rewindIcon.TabStop = false;
+            // 
+            // magnetIcon
+            // 
+            magnetIcon.BackColor = Color.Transparent;
+            magnetIcon.BackgroundImage = Properties.Resources.Magnet;
+            magnetIcon.BackgroundImageLayout = ImageLayout.Zoom;
+            magnetIcon.Enabled = false;
+            magnetIcon.Location = new Point(178, 13);
+            magnetIcon.Name = "magnetIcon";
+            magnetIcon.Size = new Size(30, 30);
+            magnetIcon.TabIndex = 90;
+            magnetIcon.TabStop = false;
+            // 
+            // extraLifeIcon
+            // 
+            extraLifeIcon.BackColor = Color.Transparent;
+            extraLifeIcon.BackgroundImage = Properties.Resources.extraLife;
+            extraLifeIcon.BackgroundImageLayout = ImageLayout.Zoom;
+            extraLifeIcon.Enabled = false;
+            extraLifeIcon.Location = new Point(214, 13);
+            extraLifeIcon.Name = "extraLifeIcon";
+            extraLifeIcon.Size = new Size(30, 30);
+            extraLifeIcon.TabIndex = 91;
+            extraLifeIcon.TabStop = false;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -733,64 +842,76 @@
             Controls.Add(resetMultiplierBtn);
             Controls.Add(hundredScoreAddBtn);
             Controls.Add(resetScoreBtn);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            Controls.Add(pictureBoxDecay);
+            Controls.Add(pictureBoxMultiplier);
+            Controls.Add(imgDecay);
+            Controls.Add(imgMultiplier);
             Controls.Add(pictureBox1);
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
+            Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(extraLifeOpacityIcon);
             Controls.Add(magnetOpacityIcon);
             Controls.Add(rewindOpacityIcon);
             Controls.Add(bonusOpacityIcon);
             Controls.Add(autoclickerOpacityIcon);
-            Controls.Add(protectionOpacityIcon);
+            Controls.Add(protectionIcon);
+            Controls.Add(extraLifeIcon);
+            Controls.Add(magnetIcon);
+            Controls.Add(rewindIcon);
+            Controls.Add(bonusIcon);
+            Controls.Add(autoclickerIcon);
+            Controls.Add(pictureBox2);
             Name = "Game";
-            Text = "Form1";
+            Text = "Clicker Game";
             Load += Game_Load;
-            ((System.ComponentModel.ISupportInitialize)protectionOpacityIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)protectionIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)autoclickerOpacityIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)bonusOpacityIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)rewindOpacityIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)magnetOpacityIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)extraLifeOpacityIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgMultiplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgDecay).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMultiplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDecay).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)autoclickerIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bonusIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)rewindIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)magnetIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)extraLifeIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox protectionOpacityIcon;
+        private PictureBox protectionIcon;
         private PictureBox autoclickerOpacityIcon;
         private PictureBox bonusOpacityIcon;
         private PictureBox rewindOpacityIcon;
         private PictureBox magnetOpacityIcon;
         private PictureBox extraLifeOpacityIcon;
         private Button button1;
-        private Button button2;
         private Button button3;
+        private Button button2;
         private Button button4;
         private Button button5;
         private Button button6;
         private Button button7;
         private Button button8;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private PictureBox imgMultiplier;
+        private PictureBox imgDecay;
+        private PictureBox pictureBoxMultiplier;
+        private PictureBox pictureBoxDecay;
         private Button resetScoreBtn;
         private Button hundredScoreAddBtn;
         private Button resetMultiplierBtn;
@@ -820,5 +941,12 @@
         private Label multiplierLabel;
         private Label decayRateLabel;
         private Label decayTimerLabel;
+        private System.Windows.Forms.Timer countdownTimer;
+        private PictureBox pictureBox2;
+        private PictureBox autoclickerIcon;
+        private PictureBox bonusIcon;
+        private PictureBox rewindIcon;
+        private PictureBox magnetIcon;
+        private PictureBox extraLifeIcon;
     }
 }
