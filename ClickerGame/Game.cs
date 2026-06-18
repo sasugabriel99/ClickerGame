@@ -125,15 +125,11 @@ namespace ClickerGame
 
         private void CounterTimer_Tick(object sender, EventArgs e)
         {
-            countdown++; // Increment the countdown
-
-            // Reset countdown if it reaches the decay interval
+            countdown++;
             if (countdown > decayTimerInterval / 1000)
             {
-                countdown = 1; // Reset to 1 after Decay() happens
+                countdown = 0;
             }
-
-            // Update the label with the current countdown value
             decayTimerLabel.Text = countdown.ToString();
         }
 
@@ -141,13 +137,6 @@ namespace ClickerGame
         {
             Decay(); // Call Decay() to subtract the score
         }
-
-
-        //private void MagnetTimer_Tick(object sender, EventArgs e)
-        //{
-
-        //}
-
 
 
         // WinTimer event to hide the decay image after 1 second
@@ -199,7 +188,7 @@ namespace ClickerGame
 
         private void button2_Click(object sender, EventArgs e)
         {
-            score = score - GetButtonPrice(button3);
+            score = score - GetButtonPrice(button2);
             IncreaseMultiplier(multiplierIndex);
             multiplierIndex *= 1.5;
 
@@ -218,7 +207,7 @@ namespace ClickerGame
 
         private void button4_Click(object sender, EventArgs e)
         {
-            score = score - GetButtonPrice(button3);
+            score = score - GetButtonPrice(button4);
             //IncreaseMultiplier(1.05);
             UpdateButtons();  // Update button prices
             UpdateScore(score);
@@ -227,7 +216,7 @@ namespace ClickerGame
 
         private void button5_Click(object sender, EventArgs e)
         {
-            score = score - GetButtonPrice(button3);
+            score = score - GetButtonPrice(button5);
             //IncreaseMultiplier(1.05);
             UpdateButtons();  // Update button prices
             UpdateScore(score);
@@ -237,7 +226,7 @@ namespace ClickerGame
         private void button6_Click(object sender, EventArgs e)
         {
             //Debug.WriteLine("Rewind purchased");
-            score = score - GetButtonPrice(button3);
+            score = score - GetButtonPrice(button6);
             //IncreaseMultiplier(1.05);
             UpdateButtons();  // Update button prices
             UpdateScore(score);
@@ -248,7 +237,7 @@ namespace ClickerGame
         {
             scoreMagnet = 1;
 
-            score = score - GetButtonPrice(button3);
+            score = score - GetButtonPrice(button7);
             UpdateScore(score);
 
             //IncreaseMultiplier(1.05);
@@ -264,7 +253,7 @@ namespace ClickerGame
 
         private void button8_Click(object sender, EventArgs e)
         {
-            score = score - GetButtonPrice(button3);
+            score = score - GetButtonPrice(button8);
             //IncreaseMultiplier(1.05);
             UpdateButtons();  // Update button prices
             UpdateScore(score);
@@ -551,7 +540,7 @@ namespace ClickerGame
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            seconds = 100;
+            seconds = 10;
             countdownTimer.Start();
             timerStart = 1;
             btnStart.Visible = false;
@@ -660,6 +649,7 @@ namespace ClickerGame
 
             decayAmount = 2;
             UpdateDecayLabel();
+            UpdateButtons();
         }
 
         private void EnableScoreMagnet(bool flag)
@@ -728,7 +718,7 @@ namespace ClickerGame
 
         private void EnableExtraLife(bool flag)
         {
-            extraLife = Math.Max(5, (int)(multiplier / 3));
+            extraLife = Math.Max(1, (int)(multiplier / 3));
             DisplayPowerupIcon("ExtraLifeDisable");
         }
 
@@ -832,9 +822,10 @@ namespace ClickerGame
 
         private void IncreaseMultiplier(double amount)
         {
-            multiplier = baseMultiplier * (1 + Math.Log10(score + 1));
-            multiplierLabel.Text = $"x{multiplier:F1}";  // Update the multiplier label
+            multiplier += amount;  
+            multiplierLabel.Text = $"x{multiplier:F1}";
             scalingFactor++;
+            decayAmount = baseDecay * (1 + multiplier / scalingFactor); 
             UpdateDecayLabel();
         }
 

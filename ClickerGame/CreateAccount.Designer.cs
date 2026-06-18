@@ -105,6 +105,7 @@
             // 
             textPass.Location = new Point(195, 140);
             textPass.Name = "textPass";
+            textPass.PasswordChar = '*';
             textPass.Size = new Size(187, 23);
             textPass.TabIndex = 7;
             // 
@@ -112,6 +113,7 @@
             // 
             textPassCon.Location = new Point(195, 171);
             textPassCon.Name = "textPassCon";
+            textPassCon.PasswordChar = '*';
             textPassCon.Size = new Size(187, 23);
             textPassCon.TabIndex = 8;
             // 
