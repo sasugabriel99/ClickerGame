@@ -121,6 +121,8 @@ namespace ClickerGame
             powerupIcons.Add("RewindDisable", rewindOpacityIcon);
             powerupIcons.Add("MagnetDisable", magnetOpacityIcon);
             powerupIcons.Add("ExtraLifeDisable", extraLifeOpacityIcon);
+
+            SetAllButtonsEnabled(false);
         }
 
         private void CounterTimer_Tick(object sender, EventArgs e)
@@ -544,6 +546,9 @@ namespace ClickerGame
             countdownTimer.Start();
             timerStart = 1;
             btnStart.Visible = false;
+
+            SetAllButtonsEnabled(true);
+            UpdateButtons();
         }
 
         private void countdownTimer_Tick(object sender, EventArgs e)
@@ -564,9 +569,10 @@ namespace ClickerGame
                 timerStart = 0;
                 highscoreLabel.Text = $"Highscore: {userHighscore}";
 
+                SetAllButtonsEnabled(false);
+
                 if (score > userHighscore)
                 {
-                    //Debug.WriteLine($"(IF)userHighscore: {userHighscore}");
                     scoreLabel.Text = "NEW HIGHSCORE!";
                     userHighscore = score;
                     highscoreLabel.Text = $"Highscore: {score}";
@@ -649,6 +655,8 @@ namespace ClickerGame
 
             decayAmount = 2;
             UpdateDecayLabel();
+
+            SetAllButtonsEnabled(true); 
             UpdateButtons();
         }
 
@@ -849,6 +857,20 @@ namespace ClickerGame
         private void Game_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void SetAllButtonsEnabled(bool enabled)
+        {
+            foreach (Button button in new[] { button1, button2, button3, button4, button5, button6, button7, button8 })
+            {
+                button.Enabled = enabled;
+            }
+
+            resetScoreBtn.Enabled = enabled;
+            resetMultiplierBtn.Enabled = enabled;
+            resetDecayBtn.Enabled = enabled;
+            hundredScoreAddBtn.Enabled = enabled;
+            thousandScoreAddBtn.Enabled = enabled;
         }
     }
 }
